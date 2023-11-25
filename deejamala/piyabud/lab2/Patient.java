@@ -11,7 +11,7 @@ package deejamala.piyabud.lab2;
  * 
  * Author: Piyabud Deejamala
  * ID: 663040122-4
- * Sec: 2j
+ * Sec: 2
  */
 
 public class Patient {
