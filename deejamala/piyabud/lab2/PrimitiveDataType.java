@@ -1,5 +1,14 @@
 package deejamala.piyabud.lab2;
 
+/*
+ * The PrimitiveDataType Program:
+ * This program generates output for eight variables based on StudentID and Firstname.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 public class PrimitiveDataType {
     public static void main(String[] args) {
         String id = "663040122-4";

@@ -1,5 +1,17 @@
 package deejamala.piyabud.lab2;
 
+/*
+ * The SimpleCalculator Program:
+ * This program accepts three arguments
+ * the first two arguments must be integer numbers
+ * and the third arguments is the operator.
+ * The program computes the result based on the specified operator.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 public class SimpleCalculator {
     public static void main(String[] args) {
         if (args.length == 3) {
