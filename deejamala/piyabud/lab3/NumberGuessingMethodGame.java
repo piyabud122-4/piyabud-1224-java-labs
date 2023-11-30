@@ -8,7 +8,6 @@ public class NumberGuessingMethodGame {
     final static int MAX = 20;
 
     public static void main(String[] args) {
-        genAnswer();
-        playGame();
+        
     }
 }

@@ -7,8 +7,6 @@ public class ConfigurableNumberGuessingGame {
     static Scanner input = new Scanner(System.in); 
 
     public static void main(String[] args) {
-        configure();
-        genAnswer();
-        playGame();
+        
     }
 }
