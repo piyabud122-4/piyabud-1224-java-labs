@@ -28,8 +28,10 @@ public class NumberGuessingGame {
             }
         }
 
+        input.close();
+
         if (correct) {
-            if (attempts==1) {
+            if (attempts == 1) {
                 System.out.println("Congratulations!");
                 System.out.println("You have tried 1 time");
             } else {

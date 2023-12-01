@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "NumberGuessingGames",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab3.NumberGuessingGames",
+            "projectName": "piyabud-1224-java-labs_b5f6feb"
+        },
+        {
+            "type": "java",
+            "name": "ConfigurableNumberGuessingGame",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab3.ConfigurableNumberGuessingGame",
+            "projectName": "piyabud-1224-java-labs_b5f6feb"
+        },
+        {
+            "type": "java",
+            "name": "NumberGuessingMethodGame",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab3.NumberGuessingMethodGame",
+            "projectName": "piyabud-1224-java-labs_b5f6feb"
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab3.Test",
+            "projectName": "piyabud-1224-java-labs_b5f6feb"
+        },
+        {
+            "type": "java",
             "name": "NumberGuessingGame",
             "request": "launch",
             "mainClass": "deejamala.piyabud.lab3.NumberGuessingGame",
