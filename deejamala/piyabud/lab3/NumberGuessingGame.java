@@ -1,5 +1,16 @@
 package deejamala.piyabud.lab3;
 
+/*
+ * The NumberGuessingGame Program:
+ * This program simulates a guessing game in which a user guesses a number from 1 to 20. 
+ * The answer is randomly generated, and the user enters a number via the console.
+ * The game ends when the user guesses the answer correctly or the user guesses the number incorrectly five times.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import java.util.Scanner;
 
 public class NumberGuessingGame {

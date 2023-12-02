@@ -1,5 +1,16 @@
 package deejamala.piyabud.lab3;
 
+/*
+ * The ConfigurableNumberGuessingGame Program:
+ * This program is an improved version of the previous program NumberGuessingMethodGame.
+ * It includes a new subroutine configure() to choose the minimum value of the guessing number,
+ * the maximum value of the guessing number and the maximum number of tries.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import java.util.*;
 
 public class ConfigurableNumberGuessingGame {

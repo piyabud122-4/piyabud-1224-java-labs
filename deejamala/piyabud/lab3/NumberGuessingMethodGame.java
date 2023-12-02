@@ -1,5 +1,18 @@
 package deejamala.piyabud.lab3;
 
+/*
+ * The NumberGuessingMethodGame Program:
+ * This program defines at least two subroutines, namely genAnswer() and playGame().
+ * The program also contains a static int variable answer which contains the answer number of the game.
+ * genAnswer() is a static void subroutine that will generate the answer 
+ * and then store the value in the variable answer.
+ * playGame() is a static void subroutine that runs the game.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import java.util.*;
 
 public class NumberGuessingMethodGame {

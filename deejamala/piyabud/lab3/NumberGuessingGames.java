@@ -1,5 +1,23 @@
 package deejamala.piyabud.lab3;
 
+/*
+ * The NumberGuessingGames Program:
+ * This program enables the user to play the number guessing game 
+ * in the ConfigurableNumberGuessingGame version multiple times 
+ * until the user indicates a desire to stop playing.
+ * It includes playGames() to call method playGame().
+ * In this version, the program checks and detects the configuration settings that the user may enter, 
+ * and it also verifies whether a number falls outside the minimum or maximum values. 
+ * If it does, the program prompts the user to enter a number again without incrementing the number of tries.
+ * After the game ends, the program gives an option to play again if the user enters “y” or “Y”. 
+ * If the user enters other values, the program will quit and print the message 
+ * “Thank you for playing our games. Bye!".
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import java.util.*;
 
 public class NumberGuessingGames {
