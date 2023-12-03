@@ -32,7 +32,7 @@ public class NumberGuessingGames {
             System.out.print("Enter the max value:");
             max = input.nextInt();
             if (max < min) {
-                System.err.println("The max value must be at least equal to the min value");
+                System.out.println("The max value must be at least equal to the min value");
             }
         } while (max < min);
 
@@ -40,7 +40,7 @@ public class NumberGuessingGames {
             System.out.print("Enter the maximum number of tries:");
             maxTries = input.nextInt();
             if (maxTries <= 0) {
-                System.err.println("The maximum number of tries must be greater than 0");
+                System.out.println("The maximum number of tries must be greater than 0");
             } 
         } while (maxTries <= 0);
     }

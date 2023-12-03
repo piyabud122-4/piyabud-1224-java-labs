@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ConfigurableNumberGuessingGame",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab3.ConfigurableNumberGuessingGame",
+            "projectName": "piyabud-1224-java-labs_219cdad4"
+        },
+        {
+            "type": "java",
             "name": "NumberGuessingGames",
             "request": "launch",
             "mainClass": "deejamala.piyabud.lab3.NumberGuessingGames",
