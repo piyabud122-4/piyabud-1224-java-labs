@@ -2,6 +2,14 @@ package deejamala.piyabud.lab4;
 
 /**
  * The GuessNumberGamesV2 Program:
+ * This program is an advanced iteration of NumberGuessingGames from Lab3, adding an array of integers to store the guesses 
+ * and an integer variable to count the valid guesses.
+ * Upon the game's conclusion, the player is provided with various options to review their guesses.
+ * 'a' Option: Selecting this option displays a comprehensive list of all guesses made by the player throughout the game.
+ * 'g' Option: This option allows the player to choose and view a specific guess.
+ * Exit Feature: Any other keypress will exit the program.
+ * After the player finishes reviewing their guesses, the game reverts to the standard gameplay as in NumberGuessingGames, 
+ * allowing for a new round of play.
  * 
  * Author: Piyabud Deejamala
  * ID: 663040122-4
