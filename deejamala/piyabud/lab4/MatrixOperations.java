@@ -218,7 +218,11 @@ public class MatrixOperations {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 transposedMatrix[j][i] = matrix[i][j];
-                System.out.print(transposedMatrix[j][i] + " ");
+            }
+        }
+        for (int i = 0; i < columns; i++) {
+            for (int j = 0; j < rows; j++) {
+                System.out.print(transposedMatrix[i][j] + " ");
             }
             System.out.println();
         }
