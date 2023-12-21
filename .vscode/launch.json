@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MatrixDisplayOptions",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab4.MatrixDisplayOptions",
+            "projectName": "piyabud-1224-java-labs_219cdad4"
+        },
+        {
+            "type": "java",
+            "name": "MatrixDisplay",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab4.MatrixDisplay",
+            "projectName": "piyabud-1224-java-labs_219cdad4"
+        },
+        {
+            "type": "java",
+            "name": "GuessNumberGameV3",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab4.GuessNumberGameV3",
+            "projectName": "piyabud-1224-java-labs_219cdad4"
+        },
+        {
+            "type": "java",
             "name": "GuessNumberGamesV2",
             "request": "launch",
             "mainClass": "deejamala.piyabud.lab4.GuessNumberGamesV2",
