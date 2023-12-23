@@ -1,5 +1,20 @@
 package deejamala.piyabud.lab4;
 
+/**
+ * The MatrixDisplayOptions Program:
+ * This program presents a menu with the options to the user and prompts the user to choose an option.
+ * User Input : Similar to version 1, allow the user to input each element.
+ * Random Number: Fill the matrix with random numbers between 0 and 9.
+ * All Zeros : Initialize all elements of the matrix to 0.
+ * All Ones : Initialize all elements of the matrix to 1.
+ * Diagonal Matrix: Create a square matrix with 0s, except for 1s on the diagonal.
+ * After creating the matrix, display it in a formatted manner.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import java.util.Scanner;
 
 public class MatrixDisplayOptions {

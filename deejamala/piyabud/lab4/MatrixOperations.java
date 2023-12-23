@@ -1,5 +1,20 @@
 package deejamala.piyabud.lab4;
 
+/**
+ * The MatrixOperations Program:
+ * This program includes a menu for matrix creation and functionalities same as MatrixDisplayOptions.
+ * After creating the matrix, present a menu with the operations and prompt the user to choose an operation.
+ * Transpose Matrix: Create and display the transpose of the matrix.
+ * Row and Column Sum: Calculate and display the sum of each row and each column.
+ * Fing Max/Min Value: Find and display the minimum and maximum elements in the matrix.
+ * Diagonal Display: Identify and display the elements on the main diagonal of the matrix.
+ * The program repeatedly shows the matrix operations menu until the user chooses the “Exit” menu.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import java.util.Scanner;
 
 public class MatrixOperations {

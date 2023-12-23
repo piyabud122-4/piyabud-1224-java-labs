@@ -1,5 +1,17 @@
 package deejamala.piyabud.lab4;
 
+/**
+ * The MatrixDisplay Program:
+ * Users define the number of rows and columns for the matrix.
+ * The program ensures that the entered row and column numbers are greater than 0.
+ * Enable the user to input the elements of the matrix, starting from the top-left corner to the bottom-right corner.
+ * Show the complete matrix after all elements have been entered.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import java.util.Scanner;
 
 public class MatrixDisplay {

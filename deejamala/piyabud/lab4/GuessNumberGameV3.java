@@ -1,5 +1,18 @@
 package deejamala.piyabud.lab4;
 
+/**
+ * The GuessNumberGameV3 Program:
+ * This program includes all features from GuessNumberGameV2.
+ * Feature same as GuessNumberGameV2.
+ * After user choose 'a' to list all guesses or 'b' for a specific guess or press any other key to exit.
+ * The program outputs the game log: answer, number of guesses, win/loss status.
+ * Upon exit, display statistics: total games, wins, win ratio, average guesses per game, high score.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import java.util.Scanner;
 
 public class GuessNumberGameV3 {
