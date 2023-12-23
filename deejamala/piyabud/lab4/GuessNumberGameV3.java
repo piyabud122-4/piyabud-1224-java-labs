@@ -3,9 +3,13 @@ package deejamala.piyabud.lab4;
 import java.util.Scanner;
 
 public class GuessNumberGameV3 {
-    static int answer, min, max, maxTries, numTries, totalwin, totalgame;
+    static int answer, min, max, maxTries, numTries;
+    static int totalGuesses = 0;
+    static int totalWin = 0;
+    static int totalGame = 0;
+    static int highScore = Integer.MAX_VALUE;
     static boolean correct = false;
-    static int[] guesses, highscore;
+    static int[] guesses;
     static Scanner input = new Scanner(System.in);
 
     static void configure() {
@@ -37,6 +41,7 @@ public class GuessNumberGameV3 {
     static void playGame() {
         char review;
         int guess;
+        numTries = 0;
 
         do {
             System.out.print("Enter an integer between " + min + " and " + max + ":");
@@ -52,7 +57,6 @@ public class GuessNumberGameV3 {
 
             if (guess == answer) {
                 correct = true;
-                totalwin++;
                 break;
             } else if (guess > answer) {
                 System.out.println("Try a lower number!");
@@ -63,6 +67,11 @@ public class GuessNumberGameV3 {
 
         if (correct) {
                 System.out.println("Congratulations!");
+                totalWin++;
+                totalGuesses += numTries;
+                if (numTries < highScore) {
+                    highScore = numTries;
+                }
         } else {
             System.out.println("You ran out of guesses. The answer was " + answer);
         }
@@ -100,35 +109,33 @@ public class GuessNumberGameV3 {
             numTries = 0;
             System.out.print("Want to play again (Y or y):");
             play = input.next().charAt(0);
-            totalgame++;
+            totalGame++;
         } while (play == 'Y' || play == 'y');
 
         do {
             System.out.println("----- Game Statistics -----");
-            System.out.println("Total game played: " + totalgame);
-            System.out.println("Total wins: " + totalwin);
-            if (totalwin == 0) {
+            System.out.println("Total game played: " + totalGame);
+            System.out.println("Total wins: " + totalWin);
+            if (totalWin == 0) {
                 System.err.println("Win Ratio: 0.0%");
             } else {
-                System.out.println("Win Ratio: " + (totalwin/totalgame)*100f + "%");
+                System.out.println("Win Ratio: " + (double)(totalWin/totalGame)*100 + "%");
             }
-
-            System.out.println("Average guess per game: ");
-
+            System.out.println("Average guess per game: " + (double)totalGuesses/totalGame);
             do {
-                if (totalgame == 1) {
+                if (totalGame == 1) {
                     if (correct == false) {
                         System.out.println("High Score (Least Guesses): N/A");
                         break;
                     } else {
-                        System.out.println("High Score (Least Guesses): " + numTries);
+                        System.out.println("High Score (Least Guesses): " + highScore);
                         break;
                     }
                 } else {
-                    System.out.println("High Score (Least Guesses): " + highscore);
+                    System.out.println("High Score (Least Guesses): " + highScore);
                     break;
                 }
-            } while (totalgame > 0);
+            } while (totalGame > 0);
             break;
         } while (play != 'Y' || play != 'y');
         input.close();
