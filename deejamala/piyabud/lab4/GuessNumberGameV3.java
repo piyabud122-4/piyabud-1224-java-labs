@@ -81,13 +81,14 @@ public class GuessNumberGameV3 {
         if (correct) {
                 System.out.println("Congratulations!");
                 totalWin++;
-                totalGuesses += numTries;
                 if (numTries < highScore) {
                     highScore = numTries;
                 }
         } else {
             System.out.println("You ran out of guesses. The answer was " + answer);
         }
+
+        totalGuesses += numTries; 
 
         do {
             System.out.print("Enter 'a' to list all guesses, 'g' for a specific guess, or any other key to quit: ");
@@ -119,7 +120,6 @@ public class GuessNumberGameV3 {
         do {
             genAnswer();
             playGame();
-            numTries = 0;
             System.out.print("Want to play again (Y or y):");
             play = input.next().charAt(0);
             totalGame++;

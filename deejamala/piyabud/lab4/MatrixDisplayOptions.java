@@ -165,8 +165,7 @@ public class MatrixDisplayOptions {
     static void diagonalMatrix() {
         do {
             System.out.print("Enter the number of rows and columns for diagonal matrix: ");
-            rows = input.nextInt();
-            columns = input.nextInt();
+            rows = columns = input.nextInt();
             if (rows <= 0 || columns <= 0 || rows != columns) {
                 System.out.println("Both rows and columns must be greater than 0 and equal to each other. Please try again.");
             }
