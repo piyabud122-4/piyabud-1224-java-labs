@@ -57,7 +57,6 @@ public class MatrixDisplayOptions {
                 default:
                     break;
             }
-            break;
         } while (choice != 0);
         input.close();
     }
