@@ -46,6 +46,7 @@ public class MatrixDisplay {
             }
             displayMatrix();
         } while (rows > 0 && columns > 0);
+        input.close();
     }
 
     static void displayMatrix() {
