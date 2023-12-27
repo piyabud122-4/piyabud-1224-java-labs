@@ -21,7 +21,7 @@ public class PrimitiveDataType {
         short myshort = (short) (student_id%1000);
         int myint = student_id%1000000;
         long mylong = student_id%100000000;
-        float myfloat = (float) (student_id%100) /100f;
+        float myfloat = (float) (student_id%100) /100;
         double mydouble = (double) (student_id%10000000) /1000000;
         char mychar = name.charAt(0);
         boolean myboolean = (student_id%10) %2 != 0;

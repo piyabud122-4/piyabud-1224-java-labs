@@ -219,6 +219,7 @@ public class MatrixOperations {
                     diagonalDisplay();
                     break;
                 case 5:
+                    displayMatrixCreationMenu();
                     break;
                 default:
                     break;
