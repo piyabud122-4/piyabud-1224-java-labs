@@ -5,16 +5,31 @@ import java.util.Scanner;
 public class GuessNumberGameVer1 {
     protected int minNum, maxNum, maxTries;
     protected int correctNum;
-    protected static int numOfGame = 0;
-    Scanner input;
+    protected static int numOfGames = 0;
+    Scanner input = new Scanner(System.in);
 
     public GuessNumberGameVer1() {
-        this.minNum = 1;
-        this.maxNum = 10;
-        this.correctNum = minNum + (int) (Math.random() * ((maxNum - minNum) + 1));
-        this.maxTries = 3;
-        numOfGame++;
-        this.input = new Scanner(System.in);
+        minNum = 1;
+        maxNum = 10;
+        correctNum = minNum + (int) (Math.random() * ((maxNum - minNum) + 1));
+        maxTries = 3;
+        numOfGames++;
+    }
+
+    public GuessNumberGameVer1(int minNum ,int maxNum) {
+        this.minNum = minNum;
+        this.maxNum = maxNum;
+        maxTries = 3;
+        correctNum = minNum + (int) (Math.random() * ((maxNum - minNum) + 1));
+        numOfGames++;
+    }
+
+    public GuessNumberGameVer1(int minNum, int maxNum, int maxTries) {
+        this.minNum = minNum;
+        this.maxNum = maxNum;
+        this.maxTries = maxTries;
+        correctNum = minNum + (int) (Math.random() * ((maxNum - minNum) + 1));
+        numOfGames++;
     }
 
     public int getMinNum() {
@@ -49,16 +64,18 @@ public class GuessNumberGameVer1 {
         boolean correct = false;
         int numTries = 0;
         int guess;
+        correctNum = minNum + (int) (Math.random() * ((maxNum - minNum) + 1));
+
+        System.out.println("Welcome to a number guessing game!");
 
         do {
-            System.out.println("Welcome to a number guessing game!");
             System.out.print("Enter an integer between " + minNum + " and " + maxNum + ":");
             guess = input.nextInt();
             numTries++;
 
             do {
                 if (guess < minNum || guess > maxNum) {
-                    System.out.print("Your guess should be in [" + minNum + "," + maxNum + "]:");
+                    System.err.print("Your guess should be in [" + minNum + "," + maxNum + "]:");
                     guess = input.nextInt();
                 }
             } while (guess < minNum || guess > maxNum);
@@ -75,12 +92,23 @@ public class GuessNumberGameVer1 {
 
         if (correct) {
                 System.out.println("Congratulations!");
+                if (numTries == 1) {
+                    System.out.println("You have tried " + numTries + " time");
+                } else {
+                    System.out.println("You have tried " + numTries + " times");
+                }
         } else {
-            System.out.println("You ran out of guesses. The answer was " + correctNum);
+            System.out.println("You have tried " + numTries + " times. You ran out of guesses.");
+            System.out.println("The answer was " + correctNum);
         }
     }
 
     public static int getNumOfGames() {
-        return numOfGame;
+        return numOfGames;
+    }
+
+    @Override
+    public String toString() {
+        return "GuessNumberGame with min number as " + minNum + " max number as " + maxNum + " max number of tries as " + maxTries;
     }
 }
