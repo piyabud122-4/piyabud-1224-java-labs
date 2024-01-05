@@ -16,15 +16,15 @@ public class TestGuessNumberGame {
                 "Min = " + gng2.getMinNum() + " Max = " + gng2.getMaxNum() + " Max tries = " + gng2.getMaxTries());
         System.out.println("There are " + GuessNumberGameVer1.getNumOfGames() + " games");
     }
-    /* 
+    
     public static void testPlayGamesStats() {
         GuessNumberGameVer2 gng = new GuessNumberGameVer2(1, 5, 3);
         System.out.println(gng);
         gng.playGames();
-    }*/
+    }
 
     public static void main(String[] args) {
-        testPart1();
+        testPlayGamesStats();    
     }
     
     public static void testConstructors() {

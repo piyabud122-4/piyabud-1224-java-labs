@@ -1,0 +1,105 @@
+package deejamala.piyabud.lab5;
+
+import java.util.Scanner;
+
+public class GuessNumberGameVer2 extends GuessNumberGameVer1{
+    protected int guesses[];
+    protected int numGuesses = 0;
+    int MAX_GUESSES = 20;
+    int numTries;
+    Scanner input = new Scanner(System.in);
+
+    public GuessNumberGameVer2() {
+        super();
+        guesses = new int[MAX_GUESSES];
+    }
+
+    public GuessNumberGameVer2(int minNum, int maxNum) {
+        super(minNum, maxNum);
+        guesses = new int[MAX_GUESSES];
+    }
+
+    public GuessNumberGameVer2(int minNum, int maxNum, int maxTries) {
+        super(minNum, maxNum, maxTries);
+        guesses = new int[MAX_GUESSES];
+    }
+
+    public void playGame() {
+        boolean correct = false;
+        int numTries = 0;
+        int guess;
+        correctNum = minNum + (int) (Math.random() * ((maxNum - minNum) + 1));
+        
+        System.out.println("Welcome to a number guessing game!");
+
+        do {
+            System.out.print("Enter an integer between " + minNum + " and " + maxNum + ":");
+            guess = input.nextInt();
+
+            do {
+                if (guess < minNum || guess > maxNum) {
+                    System.err.print("Your guess should be in [" + minNum + "," + maxNum + "]:");
+                    guess = input.nextInt();
+                }
+            } while (guess < minNum || guess > maxNum);
+
+            guesses[numTries++] = guess;
+
+            if (guess == correctNum) {
+                correct = true;
+                break;
+            } else if (guess > correctNum) {
+                System.out.println("Try a lower number!");
+            } else {
+                System.out.println("Try a higher number!");
+            }
+        } while (numTries < maxTries);
+
+        if (correct) {
+                System.out.println("Congratulations!");
+                if (numTries == 1) {
+                    System.out.println("You have tried " + numTries + " time");
+                } else {
+                    System.out.println("You have tried " + numTries + " times");
+                }
+        } else {
+            System.out.println("You have tried " + numTries + " times. You ran out of guesses.");
+            System.out.println("The answer was " + correctNum);
+        }
+    }
+
+    public void showSpecific() {
+        int count;
+
+        System.out.println("Enter which guess in the range (" + minNum + "-" + numTries +")");
+        count = input.nextInt();
+        System.out.println("Guess number " + count + " is " + guesses[count-1]);
+    }
+
+    public void showGuesses() {
+        for (int i = 0; i < numTries; i++) {
+            System.out.print(guesses[i] + " ");    
+        }
+    }
+
+    public void playGames() {
+        int choice;
+
+        playGame();
+        System.out.println("If want to play again? type 'y' to continue or 'q' to quit:");
+        System.out.println("Type 'a' to see all your guesses or 'g' to see a guess on a specific play.");
+        choice = input.nextInt();
+        switch (choice) {
+            case 'y':
+                playGame();
+            case 'q':
+                break;
+            case 'a':
+                showGuesses();
+            case 'g':
+                showSpecific();
+            default:
+                break;
+        }
+    }
+}
