@@ -73,13 +73,6 @@ public class GuessNumberGameVer1 {
             guess = input.nextInt();
             numTries++;
 
-            do {
-                if (guess < minNum || guess > maxNum) {
-                    System.err.print("Your guess should be in [" + minNum + "," + maxNum + "]:");
-                    guess = input.nextInt();
-                }
-            } while (guess < minNum || guess > maxNum);
-
             if (guess == correctNum) {
                 correct = true;
                 break;

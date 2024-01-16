@@ -2,7 +2,7 @@ package deejamala.piyabud.lab5;
 
 import java.util.Scanner;
 
-public class GuessNumberGameVer2 extends GuessNumberGameVer1{
+public class GuessNumberGameVer2 extends GuessNumberGameVer1 {
     protected int guesses[];
     protected int numGuesses = 0;
     int MAX_GUESSES = 20;
@@ -24,12 +24,12 @@ public class GuessNumberGameVer2 extends GuessNumberGameVer1{
         guesses = new int[MAX_GUESSES];
     }
 
+    @Override
     public void playGame() {
         boolean correct = false;
         int guess;
         numTries = 0;
         correctNum = minNum + (int) (Math.random() * ((maxNum - minNum) + 1));
-        
         System.out.println("Welcome to a number guessing game!");
 
         do {
@@ -70,7 +70,6 @@ public class GuessNumberGameVer2 extends GuessNumberGameVer1{
 
     public void showSpecific() {
         int count;
-
         System.out.println("Enter which guess in the range (" + minNum + "-" + numTries +")");
         count = input.nextInt();
         System.out.println("Guess number " + count + " is " + guesses[count-1]);
@@ -92,21 +91,17 @@ public class GuessNumberGameVer2 extends GuessNumberGameVer1{
                 System.out.println("If want to play again? type 'y' to continue or 'q' to quit:");
                 System.out.println("Type 'a' to see all your guesses or 'g' to see a guess on a specific play.");
                 choice = input.next().charAt(0);
-                switch (choice) {
-                    case 'y':
-                        playGame();
-                        break;
-                    case 'q':
-                        break;
-                    case 'a':
-                        showGuesses();
-                        break;
-                    case 'g':
-                        showSpecific();
-                        break;
-                    default:
-                        break;
-                } 
+                if (choice == 'y' || choice == 'Y') {
+                    playGame();
+                } else if (choice == 'a' || choice == 'A') {
+                    showGuesses();
+                } else if (choice == 'g' || choice == 'G') {
+                    showSpecific();
+                } else if (choice == 'q' || choice == 'Q') {
+                    break;
+                } else {
+                    break;
+                }
             } while (choice != 'q');
         } while (choice == 'y');
     }

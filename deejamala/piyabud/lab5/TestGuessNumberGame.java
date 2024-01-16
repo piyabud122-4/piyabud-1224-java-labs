@@ -24,7 +24,7 @@ public class TestGuessNumberGame {
     }
 
     public static void main(String[] args) {
-        testPlayGamesStats();    
+        testPlayGames();
     }
     
     public static void testConstructors() {
@@ -38,7 +38,7 @@ public class TestGuessNumberGame {
         System.out.println(gng3);
         gng3.playGame();
     }
-    /* 
+    
     public static void testSetterGetterMethods() {
         GuessNumberGameVer1 gng = new GuessNumberGameVer1();
         System.out.println("The first guess number game is");
@@ -61,5 +61,5 @@ public class TestGuessNumberGame {
     public static void testPlayGames() {
         GuessNumberGameVer3 gng = new GuessNumberGameVer3(5, 10, 4);
         gng.playGames();
-    }*/
+    }
 }
