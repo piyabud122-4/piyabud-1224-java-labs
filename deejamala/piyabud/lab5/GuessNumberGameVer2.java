@@ -26,8 +26,8 @@ public class GuessNumberGameVer2 extends GuessNumberGameVer1{
 
     public void playGame() {
         boolean correct = false;
-        int numTries = 0;
         int guess;
+        numTries = 0;
         correctNum = minNum + (int) (Math.random() * ((maxNum - minNum) + 1));
         
         System.out.println("Welcome to a number guessing game!");
@@ -78,28 +78,36 @@ public class GuessNumberGameVer2 extends GuessNumberGameVer1{
 
     public void showGuesses() {
         for (int i = 0; i < numTries; i++) {
-            System.out.print(guesses[i] + " ");    
+            System.out.print(guesses[i] + " ");
         }
+        System.out.println();
     }
 
     public void playGames() {
-        int choice;
+        char choice;
 
-        playGame();
-        System.out.println("If want to play again? type 'y' to continue or 'q' to quit:");
-        System.out.println("Type 'a' to see all your guesses or 'g' to see a guess on a specific play.");
-        choice = input.nextInt();
-        switch (choice) {
-            case 'y':
-                playGame();
-            case 'q':
-                break;
-            case 'a':
-                showGuesses();
-            case 'g':
-                showSpecific();
-            default:
-                break;
-        }
+        do {
+            playGame();
+            do {
+                System.out.println("If want to play again? type 'y' to continue or 'q' to quit:");
+                System.out.println("Type 'a' to see all your guesses or 'g' to see a guess on a specific play.");
+                choice = input.next().charAt(0);
+                switch (choice) {
+                    case 'y':
+                        playGame();
+                        break;
+                    case 'q':
+                        break;
+                    case 'a':
+                        showGuesses();
+                        break;
+                    case 'g':
+                        showSpecific();
+                        break;
+                    default:
+                        break;
+                } 
+            } while (choice != 'q');
+        } while (choice == 'y');
     }
 }

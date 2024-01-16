@@ -9,6 +9,13 @@
             "name": "TestGuessNumberGame",
             "request": "launch",
             "mainClass": "deejamala.piyabud.lab5.TestGuessNumberGame",
+            "projectName": "piyabud-1224-java-labs_219cdad4"
+        },
+        {
+            "type": "java",
+            "name": "TestGuessNumberGame",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab5.TestGuessNumberGame",
             "projectName": "piyabud-1224-java-labs_63f32a28"
         },
         {
