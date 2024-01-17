@@ -18,13 +18,13 @@ public class TestGuessNumberGame {
     }
     
     public static void testPlayGamesStats() {
-        GuessNumberGameVer2 gng = new GuessNumberGameVer2(1, 5, 3);
+        GuessNumberGameVer3 gng = new GuessNumberGameVer3(1, 5, 3);
         System.out.println(gng);
         gng.playGames();
     }
 
     public static void main(String[] args) {
-        testPlayGames();
+        testPlayGamesStats();
     }
     
     public static void testConstructors() {
