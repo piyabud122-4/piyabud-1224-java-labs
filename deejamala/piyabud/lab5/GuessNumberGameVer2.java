@@ -36,22 +36,19 @@ public class GuessNumberGameVer2 extends GuessNumberGameVer1 {
             System.out.print("Enter an integer between " + minNum + " and " + maxNum + ":");
             guess = input.nextInt();
 
-            do {
-                if (guess < minNum || guess > maxNum) {
-                    System.err.print("Your guess should be in [" + minNum + "," + maxNum + "]:");
-                    guess = input.nextInt();
+            if (invalidGuess(guess)) {
+                guesses[numTries++] = guess;
+
+                if (guess == correctNum) {
+                    correct = true;
+                    break;
+                } else if (guess > correctNum) {
+                    System.out.println("Try a lower number!");
+                } else {
+                    System.out.println("Try a higher number!");
                 }
-            } while (guess < minNum || guess > maxNum);
-
-            guesses[numTries++] = guess;
-
-            if (guess == correctNum) {
-                correct = true;
-                break;
-            } else if (guess > correctNum) {
-                System.out.println("Try a lower number!");
             } else {
-                System.out.println("Try a higher number!");
+                System.err.println("Your guess should be in [" + minNum + "," + maxNum + "]:");
             }
         } while (numTries < maxTries);
 
@@ -68,9 +65,13 @@ public class GuessNumberGameVer2 extends GuessNumberGameVer1 {
         }
     }
 
+    public boolean invalidGuess(int guess) {
+        return guess >= minNum && guess <= maxNum;
+    }
+
     public void showSpecific() {
         int count;
-        System.out.println("Enter which guess in the range (" + minNum + "-" + numTries +")");
+        System.out.println("Enter which guess in the range (" + 1 + "-" + numTries +")");
         count = input.nextInt();
         System.out.println("Guess number " + count + " is " + guesses[count-1]);
     }
