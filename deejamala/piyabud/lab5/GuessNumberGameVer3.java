@@ -1,5 +1,22 @@
 package deejamala.piyabud.lab5;
 
+/**
+ * The GuessNumberGameVer3 Program:
+ * GuessNumberGameVer3 inherited from GuessNumberGameVer2.
+ * This program has three new methods, which are: 
+ * guessAverage() to calculate the average.
+ * guessMin() to calculate minimum of the guesses respectively.
+ * guessMax() to calculate maximum of the guesses respectively.
+ * If the user types in ‘v’ or ‘V’, the program should call method guessAverage() to display the average value of all the guesses.
+ * If the user types in ‘m’ or ‘M’, the program should call the method guessMin() to show the minimum of the guesses the user entered.
+ * If the user types in ‘x’ or ‘X’, the program should call the method guessMax() to display the maximum of all the guesses.
+ * When the user types in an incorrect command, the program displays the message “Invalid command” repeats the question.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import java.util.Scanner;
 
 public class GuessNumberGameVer3 extends GuessNumberGameVer2 {

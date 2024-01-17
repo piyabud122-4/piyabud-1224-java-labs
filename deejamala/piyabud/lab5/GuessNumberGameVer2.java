@@ -1,5 +1,25 @@
 package deejamala.piyabud.lab5;
 
+/**
+ * The GuessNumberGameVer2 Program:
+ * GuessNumberGameVer2 inherited from GuessNumberGameVer1.
+ * Three constructors of GuessNumberGameVer2 that call the constructors of the superclass (GuessNumberGameVer1).
+ * In these constructors, you also need to use a new operator to allocate memory space for the array guesses 
+ * by assuming that there can be at most 20 guesses.
+ * Using the annotation @Override to override the method playGame() so that if the guess number is not in the range, 
+ * numGuesses won’t be incremented and the guess number won’t be added into the array of integers, guesses.
+ * This program has three new methods which are: 
+ * showSpecific() - This method will display the guess number at a specific position 
+ *                  after the user types ‘g’ or ‘G’ and then the specific position.
+ * showGuesses() - This method will list all the user’s guesses after the game ends and the user types ‘a’ or ‘A’.
+ * playGames() - This method will call other methods: playGame(), showSpecific(), and showGuesses() 
+ *               and keep running until the user types ‘q’.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import java.util.Scanner;
 
 public class GuessNumberGameVer2 extends GuessNumberGameVer1 {
