@@ -17,87 +17,18 @@ package deejamala.piyabud.lab5;
  * Sec: 2
  */
 
-import java.util.Scanner;
-
 public class GuessNumberGameVer3 extends GuessNumberGameVer2 {
-    protected int guesses[];
-    protected int numGuesses = 0;
-    int MAX_GUESSES = 20;
-    int numTries;
-    Scanner input = new Scanner(System.in);
 
     public GuessNumberGameVer3() {
         super();
-        guesses = new int[MAX_GUESSES];
     }
 
     public GuessNumberGameVer3(int minNum, int maxNum) {
         super(minNum, maxNum);
-        guesses = new int[MAX_GUESSES];
     }
 
     public GuessNumberGameVer3(int minNum, int maxNum, int maxTries) {
         super(minNum, maxNum, maxTries);
-        guesses = new int[MAX_GUESSES];
-    }
-
-    @Override
-    public void playGame() {
-        boolean correct = false;
-        int guess;
-        numTries = 0;
-        correctNum = minNum + (int) (Math.random() * ((maxNum - minNum) + 1));
-        System.out.println("Welcome to a number guessing game!");
-
-        do {
-            System.out.print("Enter an integer between " + minNum + " and " + maxNum + ":");
-            guess = input.nextInt();
-
-            if (invalidGuess(guess)) {
-                guesses[numTries++] = guess;
-
-                if (guess == correctNum) {
-                    correct = true;
-                    break;
-                } else if (guess > correctNum) {
-                    System.out.println("Try a lower number!");
-                } else {
-                    System.out.println("Try a higher number!");
-                }
-            } else {
-                System.err.println("Your guess should be in [" + minNum + "," + maxNum + "]:");
-            }
-        } while (numTries < maxTries);
-
-        if (correct) {
-                System.out.println("Congratulations!");
-                if (numTries == 1) {
-                    System.out.println("You have tried " + numTries + " time");
-                } else {
-                    System.out.println("You have tried " + numTries + " times");
-                }
-        } else {
-            System.out.println("You have tried " + numTries + " times. You ran out of guesses.");
-            System.out.println("The answer was " + correctNum);
-        }
-    }
-
-    public boolean invalidGuess(int guess) {
-        return guess >= minNum && guess <= maxNum;
-    }
-
-    public void showSpecific() {
-        int count;
-        System.out.println("Enter which guess in the range (" + 1 + "-" + numTries +")");
-        count = input.nextInt();
-        System.out.println("Guess number " + count + " is " + guesses[count-1]);
-    }
-
-    public void showGuesses() {
-        for (int i = 0; i < numTries; i++) {
-            System.out.print(guesses[i] + " ");
-        }
-        System.out.println();
     }
 
     public void guessAverage() {
