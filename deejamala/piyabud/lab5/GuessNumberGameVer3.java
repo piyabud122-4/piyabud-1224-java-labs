@@ -18,7 +18,6 @@ package deejamala.piyabud.lab5;
  */
 
 public class GuessNumberGameVer3 extends GuessNumberGameVer2 {
-
     public GuessNumberGameVer3() {
         super();
     }
