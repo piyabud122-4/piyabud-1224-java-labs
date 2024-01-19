@@ -1,5 +1,7 @@
 package deejamala.piyabud.lab6;
 
+import java.util.Arrays;
+
 public class MonopolyGame extends Game {
     String[] gamePieces;
 
@@ -28,13 +30,7 @@ public class MonopolyGame extends Game {
 
     @Override
     public String toString() {
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < gamePieces.length; i++) {
-            result.append(gamePieces[i]);
-            if (i < gamePieces.length - 1) {
-                result.append(" ");
-            }
-        }
-        return super.toString() + " { game pieces='" + result + " '}"; 
+        return super.toString() + " { game pieces='" + Arrays.toString(gamePieces).replace("[","")
+                .replace("]", "").replace(",", "") + " '}"; 
     }
 } 
