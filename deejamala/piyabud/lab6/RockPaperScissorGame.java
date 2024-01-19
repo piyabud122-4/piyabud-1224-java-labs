@@ -36,6 +36,6 @@ public class RockPaperScissorGame extends Game {
 
     @Override
     public String toString() {
-        return super.toString() + " {, player1Choice='" + player1Choice + "', player2Choice='" + player2Choice + "'}";
+        return super.toString() + " { player1Choice='" + player1Choice + "', player2Choice='" + player2Choice + "'}";
     }
 }
