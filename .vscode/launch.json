@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TestGame3",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab6.TestGame3",
+            "projectName": "piyabud-1224-java-labs_63f32a28"
+        },
+        {
+            "type": "java",
             "name": "TestGame2",
             "request": "launch",
             "mainClass": "deejamala.piyabud.lab6.TestGame2",
