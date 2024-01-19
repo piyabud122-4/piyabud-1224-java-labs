@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TestGame2",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab6.TestGame2",
+            "projectName": "piyabud-1224-java-labs_63f32a28"
+        },
+        {
+            "type": "java",
+            "name": "TestGame",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab6.TestGame",
+            "projectName": "piyabud-1224-java-labs_63f32a28"
+        },
+        {
+            "type": "java",
+            "name": "TestGameForSection",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab6.TestGameForSection",
+            "projectName": "piyabud-1224-java-labs_63f32a28"
+        },
+        {
+            "type": "java",
             "name": "TestGameForSection",
             "request": "launch",
             "mainClass": "deejamala.piyabud.lab6.TestGameForSection",
