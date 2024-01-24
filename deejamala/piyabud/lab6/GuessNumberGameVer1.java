@@ -1,8 +1,22 @@
 package deejamala.piyabud.lab6;
 
+/* The class GuessNumberGameVer1 is is inherited from Game.
+ * It has variables minNum, maxNum, correctNum, maxTries.
+ * It has getter and setter methods for minNum, maxNum, maxTries.
+ * It has three constructors GuessNumberGameVer1(), GuessNumberGameVer1(int, int) and GuessNumberGameVer1(int, int, int).
+ * All the constructors should set gameName to “Guess Number Game” and numOfPlayers to 1 by using superclass's constructor.
+ * It overrides method toString() by using superclass's toString() to display the information of gameName and numOfPlayers.
+ * It overrides method playGame().
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 public class GuessNumberGameVer1 extends Game {
     int minNum, maxNum, correctNum, maxTries;
 
+    //getter setter
     public int getMinNum() {
         return minNum;
     }
@@ -27,6 +41,7 @@ public class GuessNumberGameVer1 extends Game {
         this.maxTries = maxTries;
     }
     
+    //constructors
     public GuessNumberGameVer1() {
         super("Guess Number Game", 1);
         this.minNum = 1;

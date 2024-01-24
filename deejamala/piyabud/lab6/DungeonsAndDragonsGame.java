@@ -1,6 +1,25 @@
 package deejamala.piyabud.lab6;
 
+/* The class DungeonsAndDragonsGame is inherited from CardGame.
+ * It implements interface HasRule, UseBoard, and UseDice.
+ * It has two constructors :
+ * 1. DungeonsAndDragonsGame() accepts no argument.
+ *    which must be initialized by calling the superclass’s constructor.
+ *    It should also set gameName to “Dungeons And Dragons Game” and numOfPlayer to 3.
+ * 2. DungeonsAndDragonsGame(int) accepts one int variable for numOfCardsPerPlayer 
+ *    which must be initialized by calling the superclass’s constructor.
+ *    It should also set gameName to “Dungeons And Dragons Game” and numOfPlayer to 3.
+ * It overrides the method toString().
+ * It overrides method playGame().
+ * It overrides the methods from interface, gameRule(), setUpBoard(), and rollDice().
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 public class DungeonsAndDragonsGame extends Cardgame implements HasRule, UseBoard, UseDice {
+    //constructors
     public DungeonsAndDragonsGame() {
         super(6);
         this.gameName = "Dungeons And Dragons Game";

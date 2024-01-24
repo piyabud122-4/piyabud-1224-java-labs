@@ -1,6 +1,17 @@
 package deejamala.piyabud.lab6;
 
+/* The class RockPaperScissorGameVer2 is inherited from RockPaperScissorGame.
+ * It overrides the methods toString() and playGame(). 
+ * It also implements interface HasRule.
+ * The interface HasRule has one void method called gameRule() to display.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 public class RockPaperScissorGameVer2 extends RockPaperScissorGame implements HasRule {
+    //constructors
     public RockPaperScissorGameVer2() {
         super();
     }
