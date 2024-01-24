@@ -1,17 +1,5 @@
 package deejamala.piyabud.lab6;
 
-interface HasRule {
-    public void gameRule();
-}
-
-interface UseBoard {
-    public void setUpBoard();
-}
-
-interface UseDice {
-    public void rollDice();
-}
-
 public class DungeonsAndDragonsGame extends Cardgame implements HasRule, UseBoard, UseDice {
     public DungeonsAndDragonsGame() {
         super(6);

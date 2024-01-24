@@ -1,17 +1,5 @@
 package deejamala.piyabud.lab6;
 
-interface HasRule {
-    public void gameRule();
-}
-
-interface UseBoard {
-    public void setUpBoard();
-}
-
-interface UseDice {
-    public void rollDice();
-}
-
 public class MonopolyGameVer2 extends MonopolyGame implements HasRule, UseBoard, UseDice {
     public MonopolyGameVer2() {
         super();

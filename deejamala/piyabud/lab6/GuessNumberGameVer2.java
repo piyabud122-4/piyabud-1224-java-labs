@@ -1,9 +1,5 @@
 package deejamala.piyabud.lab6;
 
-interface HasRule {
-    public void gameRule();
-}
-
 public class GuessNumberGameVer2 extends GuessNumberGameVer1 implements HasRule {
     public GuessNumberGameVer2() {
         super();

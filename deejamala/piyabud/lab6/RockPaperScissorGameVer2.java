@@ -1,9 +1,5 @@
 package deejamala.piyabud.lab6;
 
-interface HasRule {
-    public void gameRule();
-}
-
 public class RockPaperScissorGameVer2 extends RockPaperScissorGame implements HasRule {
     public RockPaperScissorGameVer2() {
         super();

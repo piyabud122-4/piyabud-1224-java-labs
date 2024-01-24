@@ -1,9 +1,5 @@
 package deejamala.piyabud.lab6;
 
-interface HasRule {
-    public void gameRule();
-}
-
 public class PokerGame extends Cardgame implements HasRule{
     public PokerGame() {
         super(5);
