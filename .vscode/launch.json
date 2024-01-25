@@ -9,6 +9,20 @@
             "name": "TestGamesProb1",
             "request": "launch",
             "mainClass": "deejamala.piyabud.lab7.TestGamesProb1",
+            "projectName": "piyabud-1224-java-labs_219cdad4"
+        },
+        {
+            "type": "java",
+            "name": "TestGamesProb2",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab7.TestGamesProb2",
+            "projectName": "piyabud-1224-java-labs_219cdad4"
+        },
+        {
+            "type": "java",
+            "name": "TestGamesProb1",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab7.TestGamesProb1",
             "projectName": "piyabud-1224-java-labs_63f32a28"
         },
         {

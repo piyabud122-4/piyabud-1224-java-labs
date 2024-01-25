@@ -2,7 +2,7 @@ package deejamala.piyabud.lab7;
 
 import java.util.*;
 
-public class TestGamesProb1 {
+public class TestGamesProb2 {
     static ArrayList<GuessNumberGameVer4> games = new ArrayList<GuessNumberGameVer4>();
 
     public static void printGamesList(String msg) {
@@ -16,12 +16,12 @@ public class TestGamesProb1 {
         games.add(new GuessNumberGameVer4(1, 10, 7));
         games.add(new GuessNumberGameVer4(1, 10, 5));
         games.add(new GuessNumberGameVer4(1, 5, 5));
-        
+
         printGamesList("===== Unsorted games list: =====");
     }
 
     public static void sortGamesList() {
-        Collections.sort(games, new SortByMaxTries());
+        Collections.sort(games, new SortByMaxTriesGuessRange());
         printGamesList("===== Sorted games list: =====");
     }
 
