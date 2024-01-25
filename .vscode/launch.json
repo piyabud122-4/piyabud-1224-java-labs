@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TestGamesProb1",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab7.TestGamesProb1",
+            "projectName": "piyabud-1224-java-labs_63f32a28"
+        },
+        {
+            "type": "java",
+            "name": "TestGuessNumberGameVer4",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab7.TestGuessNumberGameVer4",
+            "projectName": "piyabud-1224-java-labs_63f32a28"
+        },
+        {
+            "type": "java",
             "name": "TestGame3",
             "request": "launch",
             "mainClass": "deejamala.piyabud.lab6.TestGame3",
