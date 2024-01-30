@@ -16,8 +16,6 @@ public class PlayerFormV2 extends PlayerFormV1 {
 
     public void addComponents() {
         super.addComponents();
-        topPanel.removeAll();
-
         playerTypeLabel = new JLabel("Player Type: ");
         playerTypeBox = new JComboBox<String>();
         playerTypeBox.addItem("Beginner");
@@ -33,14 +31,6 @@ public class PlayerFormV2 extends PlayerFormV1 {
         scrollPane = new JScrollPane(note);
 
         topPanel.setLayout(new GridLayout(5,2));
-        topPanel.add(nameLabel);
-        topPanel.add(nameTextField);
-        topPanel.add(nationalityLabel);
-        topPanel.add(nationTextField);
-        topPanel.add(dateOfBirthLabel);
-        topPanel.add(dateOfBirthTextField);
-        topPanel.add(genderLabel);
-        topPanel.add(radioButtonPanel);
         topPanel.add(playerTypeLabel);
         topPanel.add(playerTypeBox);
         middlePanel = new JPanel(new GridLayout(2, 1));
