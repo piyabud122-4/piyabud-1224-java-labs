@@ -1,5 +1,21 @@
 package deejamala.piyabud.lab7;
 
+/* The class PlayerFormV1 extends from class MySimpleWindow.
+ * The title of the program is set as “Player Form V1”.
+ * Declare variables as protected variables.
+ * Interface:
+ * The laft part contains JLabel and then the right part contains JTextField whose length is 15.
+ * The first line contains the label which it is set as “Name:”
+ * The second line contains the label which it is set as “Nationality:”
+ * The third line contains the label which it is set as “Date of Birth (eg.,31-01-2005):”
+ * The fourth line contains the radio buttons which are “Male” and “Female”.
+ * Allow a user to choose only one radio button at a time and the “Female” button should be selected by default.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import javax.swing.*;
 import java.awt.*;
 

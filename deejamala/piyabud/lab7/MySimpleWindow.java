@@ -1,5 +1,19 @@
 package deejamala.piyabud.lab7;
 
+/* The class MySimpleWindow extends from class JFrame.
+ * Declare four variables, two panels and two buttons.
+ * Implement the protected void addComponents() to add two buttons whose names are “Reset” and “Submit”.
+ * Implement method protected  protected void setFrameFeatures() which performs these tasks
+ * - Set the window location at the center of the screen
+ * - Set the window visible
+ * - Exit the application using the System exit method when the user 	initiates a "close" on this frame
+ * - Pack all components of the frame.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import javax.swing.*;
 import java.awt.*;
 

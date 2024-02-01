@@ -1,5 +1,15 @@
 package deejamala.piyabud.lab7;
 
+/* The class SortByMaxTriesGuessRange:
+ * Consider the value of the max number of tries. The greater the max number of tries, the larger the object. 
+ * However, if the number of max tries is the same, we want to compare the random guess range. 
+ * The smaller the random range, the larger the object.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import java.util.Comparator;
 
 public class SortByMaxTriesGuessRange implements Comparator<GuessNumberGameVer4> {
