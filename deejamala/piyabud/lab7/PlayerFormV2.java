@@ -48,8 +48,8 @@ public class PlayerFormV2 extends PlayerFormV1 {
         topPanel.setLayout(new GridLayout(5, 2));
         topPanel.add(playerTypeLabel);
         topPanel.add(playerTypeBox);
-        middlePanel = new JPanel(new GridLayout(2, 1));
-        middlePanel.add(noteLabel);
+        middlePanel = new JPanel(new BorderLayout());
+        middlePanel.add(noteLabel, BorderLayout.NORTH);
         middlePanel.add(scrollPane);
         
         mainPanel.add(middlePanel, BorderLayout.CENTER);
