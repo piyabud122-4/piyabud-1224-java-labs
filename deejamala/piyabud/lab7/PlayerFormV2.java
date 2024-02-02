@@ -29,7 +29,7 @@ public class PlayerFormV2 extends PlayerFormV1 {
         super(title);
     }
 
-    public void addComponents() {
+    protected void addComponents() {
         super.addComponents();
         playerTypeLabel = new JLabel("Player Type: ");
         playerTypeBox = new JComboBox<String>();
