@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PlayerFormV5",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab8.PlayerFormV5",
+            "projectName": "piyabud-1224-java-labs_63f32a28"
+        },
+        {
+            "type": "java",
             "name": "PlayerFormV3",
             "request": "launch",
             "mainClass": "deejamala.piyabud.lab8.PlayerFormV3",
