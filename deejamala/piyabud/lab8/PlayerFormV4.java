@@ -1,5 +1,19 @@
 package deejamala.piyabud.lab8;
 
+/* The class PlayerFormV4 extends from PlayerFormV3.
+ * This class add the checkboxes for hobbies.
+ * Hobbies has four checkboxes for "Reading", "Browsing", "Sleeping", and "Traveling".
+ * The Sleeping box is checked by default.
+ * Add the the list of favorite sports.
+ * This list includes four sports for "Badminton", "Boxing", "Football", and "Running".
+ * The "Football" is checked by default.
+ * And add the slider for the number of years in this sport.
+ *  
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import javax.swing.*;
 import java.awt.*;
 

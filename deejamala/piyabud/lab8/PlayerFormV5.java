@@ -1,5 +1,16 @@
 package deejamala.piyabud.lab8;
 
+/* The class PlayerFormV5 extends from PlayerFormV4.
+ * This class add the icon images to the menu New, Open, and Save.
+ * Use ImageIcon to create icon images.
+ * And add the image at the bottom of the form just above the buttons.
+ * implement the constructor ReadImage() to set the image for the form.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import javax.swing.*;
 import java.awt.*;
 

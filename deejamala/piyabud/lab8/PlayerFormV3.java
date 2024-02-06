@@ -1,5 +1,16 @@
 package deejamala.piyabud.lab8;
 
+/* The class PlayerFormV3 extends from PlayerFormV2 in lab7.
+ * This class implement addMenus() to add the menu bar with these two following menus.
+ * - Menu "File" has four menu items which are "New", "Open", "Save" , and "Exit".
+ * - Menu "Config" has two menu items which are "Color", and "Size".
+ * And call method addMenus() in createAndShowGUI() to add all components in the menu.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import deejamala.piyabud.lab7.PlayerFormV2;
 import javax.swing.*;
 
