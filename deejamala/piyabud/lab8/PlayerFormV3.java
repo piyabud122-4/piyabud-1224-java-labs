@@ -4,6 +4,8 @@ package deejamala.piyabud.lab8;
  * This class implement addMenus() to add the menu bar with these two following menus.
  * - Menu "File" has four menu items which are "New", "Open", "Save" , and "Exit".
  * - Menu "Config" has two menu items which are "Color", and "Size".
+ * - Menu "Color" has three menu items which are Red, Green, and Blue.
+ * - Menu "Size" has three menu items which are 16, 20, and 24.
  * And call method addMenus() in createAndShowGUI() to add all components in the menu.
  * 
  * Author: Piyabud Deejamala
