@@ -35,7 +35,7 @@ public class DiceGameWindow extends JFrame {
 
         this.setLayout(new BorderLayout());
         this.add(buttonsPanel, BorderLayout.NORTH);
-        this.add(diceImageCanvas, BorderLayout.CENTER);
+        this.add(diceImageCanvas, BorderLayout.CENTER); 
     }
 
     public static void createAndShowGUI() {
