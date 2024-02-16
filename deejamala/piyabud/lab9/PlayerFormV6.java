@@ -32,6 +32,7 @@ public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
 
     public void addListener() {
         submitButton.addActionListener(this);
+        resetButton.addActionListener(this);
     }
 
     public void handleSubmitButton() {
@@ -59,7 +60,9 @@ public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
     }
 
     public void handleResetButton() {
-
+        nameTextField.setText("");
+        nationTextField.setText("");
+        dateOfBirthTextField.setText("");
     }
 
     @Override
