@@ -25,9 +25,9 @@ public class PlayerFormV5 extends PlayerFormV4 {
 
     public void addMenus() {
         super.addMenus();
-        newIcon = new ImageIcon(this.getClass().getResource("New-icon.png"));
-        openIcon = new ImageIcon(this.getClass().getResource("Open-icon.png"));
-        saveIcon = new ImageIcon(this.getClass().getResource("Save-icon.png"));
+        newIcon = new ImageIcon("deejamala/piyabud/lab8/New-icon.png");
+        openIcon = new ImageIcon("deejamala/piyabud/lab8/Open-icon.png");
+        saveIcon = new ImageIcon("deejamala/piyabud/lab8/Save-icon.png");
         newMenu.setIcon(newIcon);
         openMenu.setIcon(openIcon);
         saveMenu.setIcon(saveIcon);
@@ -43,7 +43,6 @@ public class PlayerFormV5 extends PlayerFormV4 {
         bottomPanel.add(buttonPanel, BorderLayout.SOUTH);
         mainPanel.add(bottomPanel, BorderLayout.SOUTH);
     }
-
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {

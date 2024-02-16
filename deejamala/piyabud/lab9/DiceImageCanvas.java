@@ -44,13 +44,13 @@ public class DiceImageCanvas extends JPanel {
                 g2d.fill(circleCenter);
                 break;
             case 2:
-                g2d.fill(circleTopLeft);
-                g2d.fill(circleBottomRight);
+                g2d.fill(circleTopRight);
+                g2d.fill(circleBottomLeft);
                 break;
             case 3:
-                g2d.fill(circleTopLeft);
+                g2d.fill(circleTopRight);
                 g2d.fill(circleCenter);
-                g2d.fill(circleBottomRight);
+                g2d.fill(circleBottomLeft);
                 break;
             case 4:
                 g2d.fill(circleTopLeft);
