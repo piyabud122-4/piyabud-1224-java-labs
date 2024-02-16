@@ -20,7 +20,7 @@ public class DiceImageCanvas extends JPanel {
 
     public DiceImageCanvas(int diceNumber) {
         this.diceNumber = diceNumber; // initialize dice number
-        setPreferredSize(new Dimension(canvasWidth, canvasHeight)); // set size with width canvasWidth and height canvasHeight
+        setSize(new Dimension(canvasWidth, canvasHeight)); // set size with width canvasWidth and height canvasHeight
         square = new Rectangle2D.Double(startSquareX, startSquareY, squareWidth, squareHeight); // initial  ize a square which is a background
         createCircles(); // call method createCircles to place dots on a rectangle
     }

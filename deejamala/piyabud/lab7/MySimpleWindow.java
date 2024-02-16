@@ -37,7 +37,7 @@ public class MySimpleWindow extends JFrame {
         add(mainPanel);
     }
 
-    protected void setFrameFeatures() {
+    public void setFrameFeatures() {
         setLocationRelativeTo(null);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

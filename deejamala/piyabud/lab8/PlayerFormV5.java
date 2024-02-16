@@ -23,7 +23,7 @@ public class PlayerFormV5 extends PlayerFormV4 {
         super(title);
     }
 
-    protected void addMenus() {
+    public void addMenus() {
         super.addMenus();
         newIcon = new ImageIcon(this.getClass().getResource("New-icon.png"));
         openIcon = new ImageIcon(this.getClass().getResource("Open-icon.png"));
@@ -33,7 +33,7 @@ public class PlayerFormV5 extends PlayerFormV4 {
         saveMenu.setIcon(saveIcon);
     }
 
-    protected void addComponents() {
+    public void addComponents() {
         super.addComponents();
         imgPanel = new ReadImage();
         imgPanel.setPreferredSize(new Dimension(400, 225));
