@@ -1,10 +1,11 @@
 package deejamala.piyabud.lab9;
 
-import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.event.ActionEvent;
 import javax.swing.*;
 
-public class PlayerFormV7 extends PlayerFormV6 implements ActionListener {
+public class PlayerFormV7 extends PlayerFormV6 implements ItemListener {
     public PlayerFormV7(String title) {
         super(title);
     }
@@ -26,8 +27,8 @@ public class PlayerFormV7 extends PlayerFormV6 implements ActionListener {
     }
 
     public void addListener() {
-        maleRadioButton.addActionListener(this);
-        femaleRadioButton.addActionListener(this);
+        maleRadioButton.addItemListener(this);
+        femaleRadioButton.addItemListener(this);
         readingCheckBox.addActionListener(this);
         browsingCheckBox.addActionListener(this);
         sleepingCheckBox.addActionListener(this);
@@ -35,16 +36,17 @@ public class PlayerFormV7 extends PlayerFormV6 implements ActionListener {
     }
 
     @Override
+    public void itemStateChanged(ItemEvent e) {
+        JRadioButton srcRadioButton = (JRadioButton) e.getItemSelectable();
+        String genderRadioButton = srcRadioButton.getActionCommand();
+        if (e.getStateChange() == ItemEvent.SELECTED) {
+            JOptionPane.showMessageDialog(this, "Gender is updated to " + genderRadioButton);
+        }
+    }
+
+    @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
-        if (src == maleRadioButton || src == femaleRadioButton) {
-            JRadioButton radioButton = (JRadioButton) src;
-            String yourGender = radioButton.getText();
-            if (radioButton.isSelected()) {
-                JOptionPane.showMessageDialog(this, "Gender is updated to " + yourGender);
-            }
-        }
-
         if (src == readingCheckBox || src == browsingCheckBox || src == sleepingCheckBox || src == travelingCheckBox) {
             JCheckBox checkBox = (JCheckBox) src;
             String hobby = checkBox.getText();

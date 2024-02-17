@@ -7,7 +7,6 @@ import deejamala.piyabud.lab8.*;
 
 public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
     protected String gender;
-    protected StringBuilder hobbies = new StringBuilder();
 
     public PlayerFormV6(String title) {
         super(title);
@@ -44,6 +43,7 @@ public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
             gender = "female";
         }
 
+        StringBuilder hobbies = new StringBuilder();
         if (readingCheckBox.isSelected() == true) {
             hobbies.append("Reading" + " ");
         } 
