@@ -77,6 +77,7 @@ public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
         }
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
         if (src == submitButton) {
