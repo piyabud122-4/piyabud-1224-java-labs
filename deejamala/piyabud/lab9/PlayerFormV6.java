@@ -2,7 +2,6 @@ package deejamala.piyabud.lab9;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
 import deejamala.piyabud.lab8.*;
 
@@ -33,6 +32,9 @@ public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
     public void addListener() {
         submitButton.addActionListener(this);
         resetButton.addActionListener(this);
+        nameTextField.addActionListener(this);
+        nationTextField.addActionListener(this);
+        dateOfBirthTextField.addActionListener(this);
     }
 
     public void handleSubmitButton() {
@@ -64,13 +66,25 @@ public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
         nationTextField.setText("");
         dateOfBirthTextField.setText("");
     }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand().equals("Submit")) {
-            handleSubmitButton();
-        } else if (e.getActionCommand().equals("Reset")) {
-            handleResetButton();
+    
+    public void handleTextField(JTextField src) {
+        if (src == nameTextField) {
+            JOptionPane.showMessageDialog(this, "Name is changed to " + nameTextField.getText());
+        } else if (src == nationTextField) {
+            JOptionPane.showMessageDialog(this, "Nationality is changed to " + nationTextField.getText());
+        } else if (src == dateOfBirthTextField) {
+            JOptionPane.showMessageDialog(this, "Date of Birth is changed to " + dateOfBirthTextField.getText());
         }
     }
+
+    public void actionPerformed(ActionEvent e) {
+        Object src = e.getSource();
+        if (src == submitButton) {
+            handleSubmitButton();
+        } else if (src == resetButton) {
+            handleResetButton();
+        } else if (src instanceof JTextField) {
+            handleTextField((JTextField) src);
+        }
+    }    
 }
