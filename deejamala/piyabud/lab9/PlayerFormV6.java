@@ -73,7 +73,7 @@ public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
         
         JOptionPane.showMessageDialog(this, nameTextField.getText() + " has nationality as " + nationTextField.getText() 
         + " and was born on " + dateOfBirthTextField.getText() + ", has gender as " + gender + ", is a " + playerTypeBox.getSelectedItem() 
-        + " player, has hobbies as " + hobbies + " and plays " + sportList.getSelectedValuesList());
+        + " player, has hobbies as " + hobbies.toString() + " and plays " + sportList.getSelectedValuesList());
     }
 
     public void handleResetButton() {
