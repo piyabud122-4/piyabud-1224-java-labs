@@ -57,7 +57,7 @@ public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
             gender = "female";
         }
 
-        StringBuilder hobbies = new StringBuilder();
+        StringBuffer hobbies = new StringBuffer();
         if (readingCheckBox.isSelected() == true) {
             hobbies.append("Reading" + " ");
         } 
@@ -70,6 +70,7 @@ public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
         if (travelingCheckBox.isSelected() == true) {
             hobbies.append("Traveling" + " ");
         }
+        
         JOptionPane.showMessageDialog(this, nameTextField.getText() + " has nationality as " + nationTextField.getText() 
         + " and was born on " + dateOfBirthTextField.getText() + ", has gender as " + gender + ", is a " + playerTypeBox.getSelectedItem() 
         + " player, has hobbies as " + hobbies + " and plays " + sportList.getSelectedValuesList());
