@@ -2,8 +2,7 @@ package deejamala.piyabud.lab10;
 
 import java.util.List;
 
-import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -38,12 +37,15 @@ public class PlayerFormV8 extends PlayerFormV7 implements ListSelectionListener 
 
     @Override
     public void valueChanged(ListSelectionEvent e) {
+        boolean isAdjusting = e.getValueIsAdjusting();
         StringBuffer sports = new StringBuffer();
-        List<String> selectedSports = sportList.getSelectedValuesList();
-        int numSelected = selectedSports.size();
-        for (int i = 0; i < numSelected; i++) {
-            sports.append(selectedSports.get(i) + " ");
+        if (!isAdjusting) {
+            List<String> selectedSports = sportList.getSelectedValuesList();
+            int numSelected = selectedSports.size();
+            for (int i = 0; i < numSelected; i++) {
+                sports.append(selectedSports.get(i) + " ");
+            }
+            JOptionPane.showMessageDialog(this, "Selected sports are " + sports.toString());
         }
-        JOptionPane.showMessageDialog(this, "Selected sports are " + sports.toString());
     }
 }
