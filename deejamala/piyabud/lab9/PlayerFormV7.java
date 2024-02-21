@@ -1,5 +1,16 @@
 package deejamala.piyabud.lab9;
 
+/* The class PlayerFormV7 extends from PlayerFormV6 and implements ItemListener.
+ * When the user clicks at a radio button, 
+ * the program displays the message dialog showing the update in the format “Gender is updated to <selected gender>”.
+ * When the user selects a checkbox, the program displays the dialog “<hobby> is one of the hobbies”.
+ * When the user deselects a checkbox, the program displays the dialog “<hobby> is no longer one of the hobbies”.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.ActionEvent;

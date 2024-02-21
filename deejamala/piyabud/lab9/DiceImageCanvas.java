@@ -1,5 +1,14 @@
 package deejamala.piyabud.lab9;
 
+/* The class DiceImageCanvas:
+ * The program can set dice representing each number, from one to six on a panel.
+ * And display in the class DiceGameWindow.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;

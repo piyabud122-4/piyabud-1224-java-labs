@@ -1,5 +1,19 @@
 package deejamala.piyabud.lab9;
 
+/* The class PlayerFormV6 extends from PlayerFormV5 and implements ActionListener.
+ * When the user enters the top three text fields and clicks the Submit button, 
+ * the program displays the message in the message dialog.
+ * The program displays the values of name, nationality, date of birth, gender, player type, hobbies, and sports in the format.
+ * When the user clicks the Reset button, the program resets the name, nationality, and date of birth text fields.
+ * When the user changes any text field and press Enter on the keyboard, 
+ * the program displays the message dialog showing that text field is updated, 
+ * in the format “<Textfield Name> is changed to <Textfield Value>”.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
