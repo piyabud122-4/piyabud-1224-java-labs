@@ -17,7 +17,7 @@ package deejamala.piyabud.lab9;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-import deejamala.piyabud.lab8.*;
+import deejamala.piyabud.lab8.PlayerFormV5;
 
 public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
     protected String gender;

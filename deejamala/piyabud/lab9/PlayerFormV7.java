@@ -14,6 +14,7 @@ package deejamala.piyabud.lab9;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.*;
 
 public class PlayerFormV7 extends PlayerFormV6 implements ItemListener {
@@ -37,7 +38,9 @@ public class PlayerFormV7 extends PlayerFormV6 implements ItemListener {
         msw.setFrameFeatures();
     }
 
+    @Override
     public void addListener() {
+        super.addListener(); //add super method
         maleRadioButton.addItemListener(this);
         femaleRadioButton.addItemListener(this);
         readingCheckBox.addActionListener(this);
@@ -57,6 +60,7 @@ public class PlayerFormV7 extends PlayerFormV6 implements ItemListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        super.actionPerformed(e); //add super method
         Object src = e.getSource();
         if (src == readingCheckBox || src == browsingCheckBox || src == sleepingCheckBox || src == travelingCheckBox) {
             JCheckBox checkBox = (JCheckBox) src;

@@ -1,11 +1,9 @@
 package deejamala.piyabud.lab10;
 
 import java.util.List;
-
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-
 import deejamala.piyabud.lab9.PlayerFormV7;
 
 public class PlayerFormV8 extends PlayerFormV7 implements ListSelectionListener {
