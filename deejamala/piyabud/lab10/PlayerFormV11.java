@@ -35,11 +35,12 @@ public class PlayerFormV11 extends PlayerFormV10 {
 
     @Override
     public void addListener() {
-
+        super.addListener();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        super.actionPerformed(e);
         Object source = e.getSource();
     }
 }
