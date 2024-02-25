@@ -68,14 +68,16 @@ public class PlayerFormV10 extends PlayerFormV9 {
             nameTextField.setFont(new Font("Serif", Font.BOLD, 24));
             nationTextField.setFont(new Font("Serif", Font.BOLD, 24));
             dateOfBirthTextField.setFont(new Font("Serif", Font.BOLD, 24));
-        } else if (source == newMenu) {
+        }
+        
+        if (source == newMenu) {
             JOptionPane.showMessageDialog(this, "You click menu New");
         } else if (source == openMenu) {
             JOptionPane.showMessageDialog(this, "You click menu Open");
         } else if (source == saveMenu) {
             JOptionPane.showMessageDialog(this, "You click menu Save");
         } else if (source == exitMenu) {
-            System.exit(0);
+            System.exit(1);
         }
     }
 }

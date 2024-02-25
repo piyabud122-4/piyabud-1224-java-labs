@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PlayerFormV10",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab10.PlayerFormV10",
+            "projectName": "piyabud-1224-java-labs_219cdad4"
+        },
+        {
+            "type": "java",
+            "name": "PlayerFormV11",
+            "request": "launch",
+            "mainClass": "deejamala.piyabud.lab10.PlayerFormV11",
+            "projectName": "piyabud-1224-java-labs_219cdad4"
+        },
+        {
+            "type": "java",
             "name": "PlayerFormV11",
             "request": "launch",
             "mainClass": "deejamala.piyabud.lab10.PlayerFormV11",
