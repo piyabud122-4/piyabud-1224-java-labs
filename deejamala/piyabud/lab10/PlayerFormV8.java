@@ -1,5 +1,14 @@
 package deejamala.piyabud.lab10;
 
+/* The class PlayerFormV8 extends from PlayerFormV7 and implements ListSelectionListener.
+ * Overrides the method addListeners() such that the appropriate listener is added to the list.
+ * Implement the method valueChanged() that will handle when items in a list are selected.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import java.util.List;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
