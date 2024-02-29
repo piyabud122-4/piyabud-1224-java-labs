@@ -13,8 +13,6 @@ package deejamala.piyabud.lab9;
 
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.awt.event.ActionEvent;
-
 import javax.swing.*;
 
 public class PlayerFormV7 extends PlayerFormV6 implements ItemListener {
@@ -43,33 +41,33 @@ public class PlayerFormV7 extends PlayerFormV6 implements ItemListener {
         super.addListener(); //add super method
         maleRadioButton.addItemListener(this);
         femaleRadioButton.addItemListener(this);
-        readingCheckBox.addActionListener(this);
-        browsingCheckBox.addActionListener(this);
-        sleepingCheckBox.addActionListener(this);
-        travelingCheckBox.addActionListener(this);
+        readingCheckBox.addItemListener(this);
+        browsingCheckBox.addItemListener(this);
+        sleepingCheckBox.addItemListener(this);
+        travelingCheckBox.addItemListener(this);
     }
 
     @Override
     public void itemStateChanged(ItemEvent e) {
-        JRadioButton srcRadioButton = (JRadioButton) e.getItemSelectable();
-        String genderRadioButton = srcRadioButton.getActionCommand();
-        if (e.getStateChange() == ItemEvent.SELECTED) {
-            JOptionPane.showMessageDialog(this, "Gender is updated to " + genderRadioButton);
-        }
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        super.actionPerformed(e); //add super method
-        Object src = e.getSource();
-        if (src == readingCheckBox || src == browsingCheckBox || src == sleepingCheckBox || src == travelingCheckBox) {
-            JCheckBox checkBox = (JCheckBox) src;
-            String hobby = checkBox.getText();
-            if (checkBox.isSelected()) {
-                JOptionPane.showMessageDialog(this, hobby + " is one of the hobbies");
-            } else {
-                JOptionPane.showMessageDialog(this, hobby + " is no longer one of the hobbies");
+        SwingUtilities.invokeLater(new Runnable() { //add the solving JCheckBox
+            public void run() {
+                Object item = e.getItemSelectable();
+                if (item instanceof JRadioButton) {
+                    JRadioButton srcRadioButton = (JRadioButton) e.getItemSelectable();
+                    String genderRadioButton = srcRadioButton.getActionCommand();
+                    if (e.getStateChange() == ItemEvent.SELECTED) {
+                        JOptionPane.showMessageDialog(PlayerFormV7.this, "Gender is updated to " + genderRadioButton);
+                    }
+                } else if (item instanceof JCheckBox) { //add the JCheckBox in itemStateChanged
+                    JCheckBox srcCheckBox = (JCheckBox) e.getItemSelectable();
+                    String hobbiesCheckBox = srcCheckBox.getActionCommand();
+                    if (e.getStateChange() == ItemEvent.SELECTED) {
+                        JOptionPane.showMessageDialog(PlayerFormV7.this, hobbiesCheckBox + "is one of the hobbies");           
+                    } else if (e.getStateChange() == ItemEvent.DESELECTED) {
+                        JOptionPane.showMessageDialog(PlayerFormV7.this, hobbiesCheckBox + " is no longer one of the hobbies");
+                    }
+                }
             }
-        }
+        });
     }
 }
