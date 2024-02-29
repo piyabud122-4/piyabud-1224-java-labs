@@ -28,12 +28,6 @@ public class PlayerFormV12 extends PlayerFormV11 {
         msw.setFrameFeatures();
     }
 
-    @Override
-    public void addListener() {
-        super.addListener();
-        customMenu.addActionListener(this);
-    }
-
     public void handleTextField(JTextField tf) {
         if (tf == dateOfBirthTextField) {
             handleDateTextField(tf);
