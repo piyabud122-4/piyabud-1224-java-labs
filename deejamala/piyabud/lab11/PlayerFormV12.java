@@ -47,7 +47,6 @@ public class PlayerFormV12 extends PlayerFormV11 {
             JOptionPane.showMessageDialog(this, "Date of Birth is changed to " + formattedDate);
         } catch (DateTimeParseException e){
             JOptionPane.showMessageDialog(this, "Please enter a valid date in Date of Birth");
-            tf.requestFocusInWindow();
         }
     }
 
