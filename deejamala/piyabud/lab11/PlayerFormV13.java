@@ -2,7 +2,6 @@ package deejamala.piyabud.lab11;
 
 import java.io.*;
 import javax.swing.*;
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 
 public class PlayerFormV13 extends PlayerFormV12 {
@@ -31,14 +30,7 @@ public class PlayerFormV13 extends PlayerFormV12 {
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
         fileChooser = new JFileChooser();
-        if (source == customMenu) {
-            Color newColor = JColorChooser.showDialog(this,"Color : ", nameTextField.getForeground());
-            if (newColor != null) {
-                nameTextField.setForeground(newColor);
-                nationTextField.setForeground(newColor);
-                dateOfBirthTextField.setForeground(newColor);
-            } 
-        } else if (source == openMenu) {
+        if (source == openMenu) {
             int returnVal = fileChooser.showOpenDialog(this);
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 File file = fileChooser.getSelectedFile();
@@ -55,7 +47,8 @@ public class PlayerFormV13 extends PlayerFormV12 {
                     }
                     JOptionPane.showMessageDialog(this, "Data read from file " + filename + " is\n" + message.toString());
                     reader.close();
-                } catch (IOException ex) {
+                } catch (Exception ex) {
+                    ex.printStackTrace();
                 }
             }
         } else if (source == saveMenu) {
@@ -65,16 +58,26 @@ public class PlayerFormV13 extends PlayerFormV12 {
                 String filename = file.getPath();
                 JOptionPane.showMessageDialog(this, "Saving in file " + filename);
 
+                getSelectedGender();
                 try (PrintWriter writer = new PrintWriter(file)) {
                     writer.println(nameTextField.getText() + " has nationality as " + nationTextField.getText() 
-                    + " and was born on " + dateOfBirthTextField.getText() + ", has gender as " + gender + ", is a " 
+                    + " and was born on " + dateOfBirthTextField.getText() + ", has gender as " + gender  + ", is a " 
                     + playerTypeBox.getSelectedItem() + " player, has hobbies as " + getSelectedHobbies() + " and plays " 
                     + sportList.getSelectedValuesList());
-                } catch (IOException ex) {
+                } catch (Exception ex) {
+                    ex.printStackTrace();
                 }
             }
         } else {
             super.actionPerformed(e);
+        }
+    }
+
+    protected void getSelectedGender() {
+        if (maleRadioButton.isSelected() == true) {
+            gender = "male";
+        } else if (femaleRadioButton.isSelected() == true) {
+            gender = "female";
         }
     }
 

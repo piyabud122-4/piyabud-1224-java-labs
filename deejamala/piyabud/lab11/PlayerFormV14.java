@@ -1,6 +1,5 @@
 package deejamala.piyabud.lab11;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.io.*;
 import java.util.ArrayList;
@@ -9,7 +8,7 @@ import java.util.List;
 import javax.swing.*;
 
 public class PlayerFormV14 extends PlayerFormV13 {
-    Player player;
+    Player player, readPlayer;
     String filename;
     JMenu fillMenu;
     JRadioButtonMenuItem yesMenu, noMenu;
@@ -60,31 +59,50 @@ public class PlayerFormV14 extends PlayerFormV13 {
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
         fileChooser = new JFileChooser();
-        if (source == customMenu) {
-            Color newColor = JColorChooser.showDialog(this,"Color : ", nameTextField.getForeground());
-            if (newColor != null) {
-                nameTextField.setForeground(newColor);
-                nationTextField.setForeground(newColor);
-                dateOfBirthTextField.setForeground(newColor);
-            } 
-        } else if (source == openMenu) {
-            int returnVal = fileChooser.showOpenDialog(this);
-            if (returnVal == JFileChooser.APPROVE_OPTION) {
-                File file = fileChooser.getSelectedFile();
-                String filename = file.getPath();
-                JOptionPane.showMessageDialog(this, "Opening file " + filename);
+        if (source == openMenu) {
+            if (noMenu.isSelected()) {
+                int returnVal = fileChooser.showOpenDialog(this);
+                if (returnVal == JFileChooser.APPROVE_OPTION) {
+                    File file = fileChooser.getSelectedFile();
+                    String filename = file.getPath();
+                    JOptionPane.showMessageDialog(this, "Opening file " + filename);
 
-                try {
-                    FileReader reader = new FileReader(filename);
-                    BufferedReader r = new BufferedReader(reader);
-                    StringBuilder message = new StringBuilder();
-                    String line;
-                    while ((line = r.readLine()) != null) {
-                        message.append(line).append("\n");
+                    try {
+                        FileReader reader = new FileReader(filename);
+                        BufferedReader r = new BufferedReader(reader);
+                        StringBuilder message = new StringBuilder();
+                        String line;
+                        while ((line = r.readLine()) != null) {
+                            message.append(line).append("\n");
+                        }
+                        JOptionPane.showMessageDialog(this, "Data read from file " + filename + " is\n" + message.toString());
+                        reader.close();
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
                     }
-                    JOptionPane.showMessageDialog(this, "Data read from file " + filename + " is\n" + message.toString());
-                    reader.close();
-                } catch (IOException ex) {
+                }
+            } else if (yesMenu.isSelected()) {
+                try {
+                    int returnVal = fileChooser.showOpenDialog(this);
+                    if (returnVal == JFileChooser.APPROVE_OPTION) {
+                        File file = fileChooser.getSelectedFile();
+                        filename = file.getPath();
+                        JOptionPane.showMessageDialog(this, "Opening file " + filename);   
+                    }
+                    final FileInputStream fileIn = new FileInputStream(filename);
+                    final ObjectInputStream in = new ObjectInputStream(fileIn);
+                    readPlayer = (Player) in.readObject();
+                    nameTextField.setText(readPlayer.getName());
+                    nationTextField.setText(readPlayer.getNationality());
+                    dateOfBirthTextField.setText(readPlayer.getDob());
+                    // gender
+                    playerTypeBox.setSelectedItem(readPlayer.getPlayerType());
+                    // hobbies
+                    // sportList.setSelectedIndex();
+                    yearOfExperienceSlider.setValue(readPlayer.getYear());
+                    fileIn.close();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
                 }
             }
         } else if (source == saveMenu) {
@@ -100,7 +118,8 @@ public class PlayerFormV14 extends PlayerFormV13 {
                         + " and was born on " + dateOfBirthTextField.getText() + ", has gender as " + gender + ", is a " 
                         + playerTypeBox.getSelectedItem() + " player, has hobbies as " + getSelectedHobbies() + " and plays " 
                         + sportList.getSelectedValuesList());
-                    } catch (IOException ex) {
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
                     }
                 }
             } else if (yesMenu.isSelected()) {
@@ -110,10 +129,6 @@ public class PlayerFormV14 extends PlayerFormV13 {
                         File file = fileChooser.getSelectedFile();
                         filename = file.getPath();
                         JOptionPane.showMessageDialog(this, "Saving in file " + filename);
-                        
-                        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(filename))) {
-                            outputStream.writeObject(player);
-                        }
                     }
                     saveFormDataObject();
                     final FileOutputStream fileOut = new FileOutputStream(filename);
@@ -122,6 +137,7 @@ public class PlayerFormV14 extends PlayerFormV13 {
                     out.close();
                     fileOut.close();
                 } catch (Exception ex) {
+                    ex.printStackTrace();
                 }
             }
         } else {
@@ -138,22 +154,12 @@ public class PlayerFormV14 extends PlayerFormV13 {
         ArrayList<String> sports = new ArrayList<>();
         int year = yearOfExperienceSlider.getValue();
 
-        if (readingCheckBox.isSelected()) {
-            hobbies.add("Reading ");
-        } else if (browsingCheckBox.isSelected()) {
-            hobbies.add("Browsing ");
-        } else if (sleepingCheckBox.isSelected()) {
-            hobbies.add("Sleeping ");
-        } else if (travelingCheckBox.isSelected()) {
-            hobbies.add("Traveling ");
-        }
-
         List<String> selectedSports = sportList.getSelectedValuesList();
         int numSelected = selectedSports.size();
         for (int i = 0; i < numSelected; i++) {
             sports.add(selectedSports.get(i) + " ");
         }
 
-        player = new Player(name, nationality, dob, playerType, hobbies, sports, year);
+        player = new Player(name, nationality, dob, gender, playerType, hobbies, sports, year);
     }
 }
