@@ -97,7 +97,7 @@ public class PlayerFormV14 extends PlayerFormV13 {
                     dateOfBirthTextField.setText(readPlayer.getDob());
                     // gender
                     playerTypeBox.setSelectedItem(readPlayer.getPlayerType());
-                    // hobbies
+                    // hobbies.setSelectedIndex();
                     // sportList.setSelectedIndex();
                     yearOfExperienceSlider.setValue(readPlayer.getYear());
                     fileIn.close();
@@ -150,15 +150,10 @@ public class PlayerFormV14 extends PlayerFormV13 {
         String nationality = nationTextField.getText();
         String dob = dateOfBirthTextField.getText();
         String playerType = playerTypeBox.getSelectedItem().toString();
+        // String gender
         ArrayList<String> hobbies = new ArrayList<>();
         ArrayList<String> sports = new ArrayList<>();
         int year = yearOfExperienceSlider.getValue();
-
-        List<String> selectedSports = sportList.getSelectedValuesList();
-        int numSelected = selectedSports.size();
-        for (int i = 0; i < numSelected; i++) {
-            sports.add(selectedSports.get(i) + " ");
-        }
 
         player = new Player(name, nationality, dob, gender, playerType, hobbies, sports, year);
     }
