@@ -3,7 +3,6 @@ package deejamala.piyabud.lab11;
 import java.awt.event.ActionEvent;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.*;
 
@@ -95,10 +94,25 @@ public class PlayerFormV14 extends PlayerFormV13 {
                     nameTextField.setText(readPlayer.getName());
                     nationTextField.setText(readPlayer.getNationality());
                     dateOfBirthTextField.setText(readPlayer.getDob());
-                    // gender
+                    if (readPlayer.getGender().equals("male")) {
+                        maleRadioButton.setSelected(true);
+                    } else {
+                        femaleRadioButton.setSelected(true);
+                    }
                     playerTypeBox.setSelectedItem(readPlayer.getPlayerType());
-                    // hobbies.setSelectedIndex();
-                    // sportList.setSelectedIndex();
+                    readingCheckBox.setSelected(readPlayer.getHobbies().contains(readingCheckBox.getText()));
+                    browsingCheckBox.setSelected(readPlayer.getHobbies().contains(browsingCheckBox.getText()));
+                    sleepingCheckBox.setSelected(readPlayer.getHobbies().contains(sleepingCheckBox.getText()));
+                    travelingCheckBox.setSelected(readPlayer.getHobbies().contains(travelingCheckBox.getText()));
+                    ListModel<String> sportsModel = sportList.getModel();
+                    for (String sport : readPlayer.getSports()) {
+                        for (int i = 0; i < sportsModel.getSize(); i++) {
+                            if (sportsModel.getElementAt(i).equals(sport)) {
+                                sportList.addSelectionInterval(i, i);
+                                break;
+                            }
+                        }
+                    }
                     yearOfExperienceSlider.setValue(readPlayer.getYear());
                     fileIn.close();
                 } catch (Exception ex) {
@@ -113,6 +127,7 @@ public class PlayerFormV14 extends PlayerFormV13 {
                     filename = file.getPath();
                     JOptionPane.showMessageDialog(this, "Saving in file " + filename);
 
+                    getSelectedGender();
                     try (PrintWriter writer = new PrintWriter(file)) {
                         writer.println(nameTextField.getText() + " has nationality as " + nationTextField.getText() 
                         + " and was born on " + dateOfBirthTextField.getText() + ", has gender as " + gender + ", is a " 
@@ -150,10 +165,28 @@ public class PlayerFormV14 extends PlayerFormV13 {
         String nationality = nationTextField.getText();
         String dob = dateOfBirthTextField.getText();
         String playerType = playerTypeBox.getSelectedItem().toString();
-        // String gender
+        String gender = maleRadioButton.isSelected() ? "male" : "female";
         ArrayList<String> hobbies = new ArrayList<>();
         ArrayList<String> sports = new ArrayList<>();
         int year = yearOfExperienceSlider.getValue();
+
+        if (readingCheckBox.isSelected()) {
+            hobbies.add(readingCheckBox.getText());
+        }
+        if (browsingCheckBox.isSelected()) {
+            hobbies.add(browsingCheckBox.getText());
+        }
+        if (sleepingCheckBox.isSelected()) {
+            hobbies.add(sleepingCheckBox.getText());
+        }
+        if (travelingCheckBox.isSelected()) {
+            hobbies.add(travelingCheckBox.getText());
+        }
+
+        int[] selectedIndices = sportList.getSelectedIndices();
+        for (int index : selectedIndices) {
+            sports.add(sportList.getModel().getElementAt(index));
+        }
 
         player = new Player(name, nationality, dob, gender, playerType, hobbies, sports, year);
     }
