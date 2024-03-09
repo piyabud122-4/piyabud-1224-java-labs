@@ -114,6 +114,12 @@ public class PlayerFormV14 extends PlayerFormV13 {
                             }
                         }
                         yearOfExperienceSlider.setValue(readPlayer.getYear());
+                        JOptionPane.showMessageDialog(this, "Data read from file " + filename + " is\n" + readPlayer.getName() 
+                            + " has nationality as " + readPlayer.getNationality() + " and was born on " + readPlayer.getDob() 
+                            + ", has gender as " + readPlayer.getGender() + ", is a " + readPlayer.getPlayerType() + 
+                            " player, has hobbies as " + readPlayer.getHobbies() + " and plays " + readPlayer.getSports() +
+                            " and has experience years as " + readPlayer.getYear());
+                        in.close();
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }
