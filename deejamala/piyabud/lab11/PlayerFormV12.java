@@ -1,5 +1,28 @@
 package deejamala.piyabud.lab11;
 
+/* The class PlayerFormV12 extends from PlayerFormV11.
+ * This program has function Check for empty field when the user enters data in the text field.
+ * If the name is empty, when the user enters empty data in the text field show the dialog with 
+ * the message "Please enter some data in Name".
+ * The name text field is in focus and the next component is disabled.
+ * If the name is not empty, there will be the dialog showing the message "Name is changed to <data>".
+ * 
+ * If the nationality is empty, when the user enters empty data in the text field show the dialog with 
+ * the message "Please enter some data in Nationality".
+ * The nationality text field is in focus and the next component is disabled.
+ * 
+ * Check if the date of birth is input in the correct format, which is in the format dd-MM-yyyy, 
+ * where dd is date of the month, MM is month of the year and yyyy is the year.
+ * If the entered date is empty or not in the format yyyy-MM-dd, the dialog with 
+ * the message “Please enter a valid date in Date of Birth”.
+ * If the entered date is in the format dd-MM-yyyy, the dialog with 
+ * the message “Date of Birth is changed to <dd>-<MM>-<yyyy>”.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;

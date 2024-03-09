@@ -1,5 +1,16 @@
 package deejamala.piyabud.lab11;
 
+/* The class Player implements Serializable and has attributes as
+ * String name, String nationality, String dob, String playerType, String gender,
+ * ArrayList<String> hobbies ,ArrayList<String> sports and int year.
+ * It has contructors.
+ * It has getter and setter for all attributes.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import java.io.Serializable;
 import java.util.ArrayList;
 

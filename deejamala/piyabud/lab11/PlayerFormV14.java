@@ -1,9 +1,30 @@
 package deejamala.piyabud.lab11;
 
+/* The class PlayerFormV14 extends from PlayerFormV13.
+ * This program Add the menu Fill to the menuBar.
+ * the menu “Fill” has two radio button menu items which are “Yes” and “No”.
+ * Two radio button menu items into the same group so that only one of the radio button menu items is selected.
+ * The default selected radio button menu item is No.
+ * 
+ * When the radio button menu item No is selected, it has the same behavior as PlayerFormV13.
+ * 
+ * When the user selects menu Fill >> Yes and clicks menu Save, the app creates the Player object 
+ * which initializes the data from the filled form data and saves the object in the selected file.
+ * The app then displays the dialog message with the content “Saving in file <file path>”.
+ * 
+ * When the user selects menu Fill >> Yes and selects menu Open, the app opens the file and
+ * reads the saved object and then fills the form with the attributes of the object.  
+ * Then, the app shows the open file dialog. The app shows the message dialog “Open file <object file path>” 
+ * and fill the data in the form.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import java.awt.event.ActionEvent;
 import java.io.*;
 import java.util.ArrayList;
-
 import javax.swing.*;
 
 public class PlayerFormV14 extends PlayerFormV13 {

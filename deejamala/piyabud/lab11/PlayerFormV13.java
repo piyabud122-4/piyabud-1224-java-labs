@@ -1,5 +1,17 @@
 package deejamala.piyabud.lab11;
 
+/* The class PlayerFormV13 extends from PlayerFormV12.
+ * When the user selects the Save in File Menu, the program should read the data from the form to the chosen file. 
+ * The data is saved in the same format as the data showing in the dialog when the user clicks the submit button.
+ * 
+ * When the user selects the Open in File Menu, the program should read the data from the selected file 
+ * and show the message read from the file.
+ * 
+ * Author: Piyabud Deejamala
+ * ID: 663040122-4
+ * Sec: 2
+ */
+
 import java.io.*;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
