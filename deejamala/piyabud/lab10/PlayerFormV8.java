@@ -52,7 +52,9 @@ public class PlayerFormV8 extends PlayerFormV7 implements ListSelectionListener 
             for (int i = 0; i < numSelected; i++) {
                 sports.append(selectedSports.get(i) + " ");
             }
-            JOptionPane.showMessageDialog(this, "Selected sports are " + sports.toString());
+            if (!sportList.isSelectionEmpty()) { // add function check sportlist
+                JOptionPane.showMessageDialog(this, "Selected sports are " + sports.toString());
+            }
         }
     }
 }

@@ -81,42 +81,42 @@ public class PlayerFormV14 extends PlayerFormV13 {
                     }
                 }
             } else if (yesMenu.isSelected()) {
-                try {
-                    int returnVal = fileChooser.showOpenDialog(this);
-                    if (returnVal == JFileChooser.APPROVE_OPTION) {
+                int returnVal = fileChooser.showOpenDialog(this);
+                if (returnVal == JFileChooser.APPROVE_OPTION) {
+                    try {
                         File file = fileChooser.getSelectedFile();
                         filename = file.getPath();
                         JOptionPane.showMessageDialog(this, "Opening file " + filename);   
-                    }
-                    final FileInputStream fileIn = new FileInputStream(filename);
-                    final ObjectInputStream in = new ObjectInputStream(fileIn);
-                    readPlayer = (Player) in.readObject();
-                    nameTextField.setText(readPlayer.getName());
-                    nationTextField.setText(readPlayer.getNationality());
-                    dateOfBirthTextField.setText(readPlayer.getDob());
-                    if (readPlayer.getGender().equals("male")) {
-                        maleRadioButton.setSelected(true);
-                    } else {
-                        femaleRadioButton.setSelected(true);
-                    }
-                    playerTypeBox.setSelectedItem(readPlayer.getPlayerType());
-                    readingCheckBox.setSelected(readPlayer.getHobbies().contains(readingCheckBox.getText()));
-                    browsingCheckBox.setSelected(readPlayer.getHobbies().contains(browsingCheckBox.getText()));
-                    sleepingCheckBox.setSelected(readPlayer.getHobbies().contains(sleepingCheckBox.getText()));
-                    travelingCheckBox.setSelected(readPlayer.getHobbies().contains(travelingCheckBox.getText()));
-                    ListModel<String> sportsModel = sportList.getModel();
-                    for (String sport : readPlayer.getSports()) {
-                        for (int i = 0; i < sportsModel.getSize(); i++) {
-                            if (sportsModel.getElementAt(i).equals(sport)) {
-                                sportList.addSelectionInterval(i, i);
-                                break;
+                        
+                        final FileInputStream fileIn = new FileInputStream(filename);
+                        final ObjectInputStream in = new ObjectInputStream(fileIn);
+                        readPlayer = (Player) in.readObject();
+                        nameTextField.setText(readPlayer.getName());
+                        nationTextField.setText(readPlayer.getNationality());
+                        dateOfBirthTextField.setText(readPlayer.getDob());
+                        if (readPlayer.getGender().equals("male")) {
+                            maleRadioButton.setSelected(true);
+                        } else {
+                            femaleRadioButton.setSelected(true);
+                        }
+                        playerTypeBox.setSelectedItem(readPlayer.getPlayerType());
+                        readingCheckBox.setSelected(readPlayer.getHobbies().contains(readingCheckBox.getText()));
+                        browsingCheckBox.setSelected(readPlayer.getHobbies().contains(browsingCheckBox.getText()));
+                        sleepingCheckBox.setSelected(readPlayer.getHobbies().contains(sleepingCheckBox.getText()));
+                        travelingCheckBox.setSelected(readPlayer.getHobbies().contains(travelingCheckBox.getText()));
+                        sportList.clearSelection();
+                        ListModel<String> sportsModel = sportList.getModel();
+                        for (String sport : readPlayer.getSports()) {
+                            for (int i = 0; i < sportsModel.getSize(); i++) {
+                                if (sportsModel.getElementAt(i).equals(sport)) {
+                                    sportList.addSelectionInterval(i, i);
+                                }
                             }
                         }
+                        yearOfExperienceSlider.setValue(readPlayer.getYear());
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
                     }
-                    yearOfExperienceSlider.setValue(readPlayer.getYear());
-                    fileIn.close();
-                } catch (Exception ex) {
-                    ex.printStackTrace();
                 }
             }
         } else if (source == saveMenu) {
@@ -138,21 +138,22 @@ public class PlayerFormV14 extends PlayerFormV13 {
                     }
                 }
             } else if (yesMenu.isSelected()) {
-                try {
-                    int returnVal = fileChooser.showSaveDialog(this);
-                    if (returnVal == JFileChooser.APPROVE_OPTION) {
+                int returnVal = fileChooser.showSaveDialog(this);
+                if (returnVal == JFileChooser.APPROVE_OPTION) {
+                    try {
                         File file = fileChooser.getSelectedFile();
                         filename = file.getPath();
                         JOptionPane.showMessageDialog(this, "Saving in file " + filename);
+
+                        saveFormDataObject();
+                        final FileOutputStream fileOut = new FileOutputStream(filename);
+                        final ObjectOutputStream out = new ObjectOutputStream(fileOut);
+                        out.writeObject(player);
+                        out.close();
+                        fileOut.close();
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
                     }
-                    saveFormDataObject();
-                    final FileOutputStream fileOut = new FileOutputStream(filename);
-                    final ObjectOutputStream out = new ObjectOutputStream(fileOut);
-                    out.writeObject(player);
-                    out.close();
-                    fileOut.close();
-                } catch (Exception ex) {
-                    ex.printStackTrace();
                 }
             }
         } else {
